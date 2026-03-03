@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Sportif Tours - Marvin Coaching 37</title> 
+
+<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===================================
+           VARIABLES CSS
+           =================================== */
+        :root {
+            --main-font: 'Raleway', sans-serif;                                                
+            --color-body-bg: white;					/* MAIN COLOR */
+            --color-body: white;					 					
+           
+            /* Navbar */                   
+            --navbar-height: 70px;
+            --color-navbar-bg: #111111 ; 
+            --color-navbar-link: white;  				/* blanc */
+            --color-navbar-link-style: #047857;			 	/* Vert foncé */
+            --color-bg-burger: #047857;					/* Vert foncé */
+            
+            /* Navbar 2 */    
+              --color-navbar-white-bg: rgba(255, 255, 255, 0.95); 	/* Blanc */                       
+              --color-navbar-white-link: #111111; 			/* noir */
+              --color-navbar-white-link-hover: #059669 ;		/* Vert foncé */
+              --color-navbar-white-navlink-after:;                             
+              --color-navbar-white-social-icons: black ; 		/* noir */
+              --color-navbar-white-social-icons-hover:#059669 ;		/* Vert foncé */       
+              --color-navbar-white-burger:#111111; 			/* noir */
+                          
+            /* Accueil */
+            --accueil-title-main-font: 'Dancing Script';      
+            --color-title-animation: white; 				/* Blanc */
+            --color-accueil-text: #F0FFF0;
+            --color-accueil-bg-1: white;
+            --color-accueil-bg-2: white;
+            --color-accueil-overlay: ;
+            --color-accueil-text-overlay: ;
+            --color-accueil-title-h2-2: red;				/* Vert pâle blanc */
+            --color-accueil-title-h2: #ECFFF5;				/* Vert pâle blanc */
+            --color-accueil-title-h3: #059669;				/* Vert foncé */
+            --color-accueil-bg-button: #059669;				/* Vert foncé */
+            --color-accueil-button-hover: #047857;
+            --color-accueil-button:#000000; 
+            --color-accueil-bg-img: #111111 ;				/* noir - IF NOT => MAIN COLOR */			
+            
+            /* Section */
+            --color-bg-section-top: #1F2937;				/* Gris anthracite moderne */
+            --color-bg-section-top-bf: ;
+            --color-section-title): #000000;
+            --color-bg-section-bot): #000000;
+            
+            --color-asso-box-bg: #f9f9f9;
+            --color-asso-box-h3: #000000;
+            --color-asso-box-h4: #000000;
+        
+            /* burger */       
+            --color-burger-1: ;
+            --color-burger-2: ;                    
+            --color-bg-mobile-menu: ;
+            --color-bg-mobile-menu-link: ;
+            --color-bg-mobile-menu-link-hover: ;
+            --color-bg-mobile-menu-social: ; 
+            --color-bg-mobile-menu-social-hover: ;
+               
+            /* Footer */
+            --color-footer-1: ;
+                
+        }
+
+        /* ===================================
+           RESET & BASE
+           =================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: var(--main-font);
+            color: var(--color-body);
+            background-color: var(--color-body-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+     	h1, h2, h3 {
+  	    color: var(--text-title);
+	}
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+
+
+
+
+        /* ===================================
+           ANIMATION D'APPARITION PROGRESSIVE (ACCUEIL)
+           =================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .highlight {
+  	color: var(--color-accueil-title-h2-2);
+	}
+
+        .accueil-title h1,
+        .accueil-title h2,
+        .accueil-title h3,
+        .accueil-title .btn {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            color: var(--color-title-animation);
+        }
+        .accueil-title h1 {          
+         font-family: var(--accueil-title-main-font);
+    	 font-size: clamp(3.8rem, 10vw, 7rem);
+    	 color: var(--color-accueil-title-h1);
+    	 line-height: 1.1;
+    	 animation-delay: 0.3s;
+    	 }
+        .accueil-title h2 {
+         font-family: var(--accueil-title-main-font);
+    	 font-size: clamp(3.8rem, 10vw, 7rem);
+    	 color: var(--color-accueil-title-h2);
+    	 line-height: 1.1;
+    	 animation-delay: 0.3s;
+	}
+        .accueil-title h3 {
+         font-family: var(--main-font);
+         color: var(--color-accueil-title-h3);
+    	 font-size: clamp(3.5rem, 10vw, 7rem);
+    	 line-height: 1.1;
+    	 animation-delay: 0.6s;
+	}
+	
+        .accueil-title .btn { animation-delay: 1.5s; }
+
+
+        /* ===================================
+           NAVBAR
+           =================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--color-navbar-bg); 
+            /*backdrop-filter: blur(10px); */
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: var(--navbar-height);
+            transition: all 0.4s ease;
+        }
+        .navbar.white {
+            background-color: var(--color-navbar-white-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+
+        .nav-links a, .social-icons a, .burger span {
+            color: var(--color-navbar-link);
+            background-color: transparent;
+            transition: color 0.3s ease;
+        }
+        .burger span {
+            background-color: var(--color-bg-burger);
+        }
+
+
+        .navbar.white .nav-links a
+        {
+            color: var(--color-navbar-white-link);
+        }
+        .navbar.white .social-icons a {
+            color: var(--color-navbar-white-social-icons);
+        }
+        
+        .navbar.white .nav-links a:hover { color: var(--color-navbar-white-link-hover); }
+        .navbar.white .social-icons a:hover { color: var(--color-navbar-white-social-icons-hover); }
+        .navbar.white .burger span { background-color: var(--color-navbar-white-burger); }
+
+
+        .nav-links a {
+            font-size: 22px;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-navbar-link-style);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .navbar.white .nav-links a::after { background-color: var(--color-navbar-white-navlink-after); }
+
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            margin-left: auto;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+            
+        }
+        .social-icons a {
+            font-size: 24px;
+            margin-left: 1rem;
+        }
+
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .burger span {
+            width: 30px;
+            height: 3px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .burger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .burger.active span:nth-child(2) { opacity: 0; }
+        .burger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+
+        /* ===================================
+           MENU MOBILE
+           =================================== */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--color-bg-mobile-menu);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            padding: 2rem;
+        }
+        .mobile-menu.active { 
+            transform: translateX(0); 
+        }
+
+
+        .mobile-menu a {
+            color: var(--color-bg-mobile-menu-link);
+            font-size: 28px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .mobile-menu a:hover {
+            color: var(--color-bg-mobile-menu-link-hover);
+        }
+        .mobile-menu .social-icons {
+            display: flex;
+            justify-content: center; 
+            align-items: center;  
+            gap: 1.8rem; 
+            margin-top: 1.5rem;          
+            margin: 0 auto;
+            width: 100%;
+            padding: 0;
+            list-style: none;
+        }
+
+
+        .mobile-menu .social-icons a {
+            font-size: 34px;      
+            color: var(--color-bg-mobile-menu-social);
+            transition: color 0.3s ease;
+            margin: 0;
+        }
+
+
+        .mobile-menu .social-icons a:hover {
+            color: var(--color-bg-mobile-menu-social-hover);
+        }
+
+
+        body.body-lock { 
+            overflow: hidden; 
+        }
+
+
+        /* ===================================
+           SECTIONS GÉNÉRALES
+           =================================== */
+        section {
+            min-height: 100vh;
+            position: relative;
+            padding-top: calc(var(--navbar-height) + 20px);
+        }
+        
+        .section-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            /* background-color: blue;*/
+        }
+        .section-top {
+            height: 35vh;
+            min-height: 180px;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--color-bg-section-top);
+        }
+        .section-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-bg-section-top-bf);
+            z-index: 1;
+        }
+        .section-top img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .section-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--color-section-title);
+            font-size: 65px;
+            font-weight: 700;
+            text-align: center;
+            z-index: 2;
+            margin: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        .section-bottom {
+            flex: 1;
+            background-color: var(--color-bg-section-bot);
+            padding: 3rem 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;			/* "center" si 3 boites horizontales */
+            flex-direction: column;
+        }
+
+
+        .text-content,
+        .boxes-container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        .text-content {
+            font-size: 20px;
+            line-height: 1.9;
+        }
+
+
+        /* ===================================
+           SECTION ACCUEIL
+           =================================== */
+        #accueil {
+            height: 100vh;
+            position: relative;
+            background: var(--color-accueil-bg-img) url('images/') center/cover no-repeat;
+        }
+        .accueil-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-accueil-overlay);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--color-accueil-text-overlay);
+            padding: 0 5%;
+            z-index: 1;
+        }
+        .accueil-title h1 {
+            font-size: 35px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .accueil-title h2 {
+            font-size: 65px;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        .accueil-title h2 .red-text {
+            color: var(--color-accueil-title);
+            font-weight: 700;
+        }
+        .accueil-title h3 {
+            font-size: 35px;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--color-accueil-bg-button);
+            color: var(--color-accueil-button);
+            padding: 1rem 2.5rem;
+            font-size: 20px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 6px;
+        }
+        .btn:hover {
+            background-color: var(--color-accueil-button-hover);
+        }
+
+
+        /* ===================================
+           SECTION ACCOMPAGNEMENTS
+           =================================== */
+        .boxes-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            /*background-color: red;*/
+        }
+        .box {
+            background-color: var(--color-asso-box-bg); 
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            flex: 0 0 320px; 				/* avant 1 1 320px; */
+            transition: transform 0.3s ease;
+        }
+        
+        /* Image dans les boxes */
+	.box-image {
+  	    width: 100%;
+  	    height: 200px;
+  	    overflow: hidden;
+  	    border-radius: 6px;
+  	    margin-bottom: 1.5rem;
+	}
+
+	.box-image img {
+    	   width: 100%;
+           height: 100%;
+    	   object-fit: cover;
+	}
+
+        .box:hover {
+            transform: translateY(-8px);
+        }              
+        
+        .box h3 {
+            font-size: 34px;
+            margin-bottom: 1rem;
+            color: var(--color-asso-box-h3);
+        }
+        .box h4 {
+            font-size: 24px;
+            margin: 0.5rem 0;
+            color: var(--color-asso-box-h4);
+            font-weight: 500;
+        }
+
+
+        /* ===================================
+           FOOTER
+           =================================== */
+        .footer {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            padding: 4rem 5% 2rem;
+            font-size: 18px;
+        }
+        .footer-links-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .footer-links {
+            min-width: 200px;
+            text-align: center;
+        }
+        .footer-links h3 {
+            font-size: 20px;
+            margin-bottom: 1rem;
+            color: var(--color-red);
+        }
+        .footer-links a {
+            display: block;
+            margin-bottom: 0.2rem;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--color-red);
+        }
+        .footer-social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .footer-social-links b {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .footer-social-links a {
+            font-size: 24px;
+            color: #cccccc;
+        }
+        .footer-social-links a:hover {
+            color: var(--color-red);
+        }
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer-logo img {
+            max-height: 90px;
+        }
+        .footer p {
+            text-align: center;
+            font-size: 14px;
+            color: var(--color-footer-1);
+            margin-top: 1.5rem;
+        }
+
+
+        /* ===================================
+           RESPONSIVE
+           =================================== */
+        @media (max-width: 992px) {
+            .nav-links, .social-icons { display: none; }
+            .burger { 
+                display: flex !important; 
+                margin-left: auto; 
+            }
+            .navbar { justify-content: center-end; }
+            section { padding-top: calc(var(--navbar-height) + 10px); }
+            .section-title { font-size: 48px; }
+            .accueil-title h1, .accueil-title h3 { font-size: 28px; }
+            .accueil-title h2 { font-size: 48px; }
+            .text-content { font-size: 18px; }
+        }
+        @media (max-width: 768px) {
+            .section-top { height: 20vh !important; min-height: 120px; }
+            .section-bottom { padding: 2rem 5%; }
+            .section-title { font-size: 36px; }
+            .accueil-title h1, .accueil-title h3 { font-size: 28px; }
+            .accueil-title h2 { font-size: 36px; }
+            .btn { padding: 0.8rem 2rem; font-size: 18px; }
+            .boxes-container { flex-direction: column; align-items: center; gap: 2rem; }
+            .box { max-width: 90%; padding: 2rem 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .section-title { font-size: 34px; }
+            .accueil-title h1, .accueil-title h3 { font-size: 28px; }
+            .accueil-title h2 { font-size: 36px; }
+            .text-content { font-size: 16px; }
+            .box { padding: 1.8rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#accompagnement">Accompagnements</a>
+                <a href="#apropos">A Propos</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com/Marvin.coaching.37" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/marvin.coaching.37" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#accueil" class="mobile-link">Accueil</a>
+        <a href="#accompagnement" class="mobile-link">Accompagnement</a>
+        <a href="#apropos" class="mobile-link">A propos</a>
+
+        <div class="social-icons">
+            <a href="https://facebook.com/Marvin.coaching.37" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/marvin.coaching.37" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+
+    <!-- ACCUEIL -->
+    <section id="accueil">
+        <div class="accueil-overlay">
+            <div class="accueil-title">
+                <h2>Marvin <span class="var(--color-accueil-title-h2-2)">Coaching</span></h2>
+                <h3>Coach sportif | Fitness | Arts Martiaux</h3>
+                <a href="#accompagnement" class="btn">Mes services</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ACCOMPAGNEMENT -->
+    <section id="accompagnement">
+        <div class="section-container">
+            <div class="section-top">
+                <img src="images/accompagnement-title.jpg" alt="">
+                <h2 class="section-title">Mes accompagnements</h2>
+            </div>
+            <div class="section-bottom">
+                <div class="text-content">
+                    <p><B>Texte blabla</p><br><br>
+                </div>
+                <div class="boxes-container">
+                    <div class="box">
+                     	<div class="box-image"><img src="images/box1.jpeg" alt=""></div>
+                        <h3>Programme Personnalisé</h3>
+                        <h4> - A votre écoute, personne unique = programme unique blabla H4</h4>
+                        <div><a href="" target="_blank" class="btn">En savoir plus</a></div>
+                    </div>
+                    <div class="box">
+                    	<div class="box-image"><img src="images/box2.jpeg" alt=""></div>
+                        <h3>Remise en forme</h3>
+                        <h4> - prise de masse, remise en forme, rééducation blabla H4 </h4><br>
+                        <div><a href="" target="_blank" class="btn">En savoir plus</a></div>
+                    </div>
+                    <div class="box">
+                        <div class="box-image"><img src="images/box3.jpeg" alt=""></div>
+                        <h3>Self Defense</h3>
+                        <h4>Confiance en soi, défense, arts Martiaux blabla H4</h4><br>
+                        <div><a href="" target="_blank" class="btn">En savoir plus</a></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A PROPOS -->
+    <section id="apropos">
+        <div class="section-container">
+            <div class="section-top">
+                <img src="images/apropos-title.jpg" alt="">
+                <h2 class="section-title">Votre Coach H2</h2>
+            </div>
+            <div class="section-bottom">
+                <div class="text-content">
+                    <b>Marvin</b><br>
+                    <p>Texte blabla </p><br>
+                    </p><br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-links-container">
+            <div class="footer-links">
+                <h3>Liens</h3>
+                <a href="" target="_blank">exemple</a>
+                <a href="" target="_blank">exemple</a>
+                <a href="" target="_blank">exemple</a>
+            </div>
+            <div class="footer-links">
+                <h3>Partenaires</h3>
+                <a href="" target="_blank">exemple</a>
+                <a href="" target="_blank">exemple</a>
+                <a href="" target="_blank">exemple</a>
+            </div>
+            <div class="footer-links">
+                <h3>Contact</h3>
+                <a href="">mail@example.me</a>
+                <div class="footer-social-links"><b>Suivez nous :</b>
+                    <a href="https://facebook.com/Marvin.coaching.37" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/marvin.coaching.37" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-logo"><img src="images/logo.png" alt="Logo"></div>
+            </div>
+        </div>
+        <p>© 2026 MARVIN COACHING - TOUS DROITS RÉSERVÉS.</p>
+    </footer>
+
+
+    <script>
+        // === MENU MOBILE ===
+        const burger = document.getElementById('burger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const body = document.body;
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        burger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            burger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.classList.toggle('body-lock');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                body.classList.remove('body-lock');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                burger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                body.classList.remove('body-lock');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                burger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                body.classList.remove('body-lock');
+            }
+        });
+
+        // === CHANGEMENT DE COULEUR DE LA NAVBAR ===
+        const navbar = document.getElementById('navbar');
+        const accueilSection = document.getElementById('accueil');
+        const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height'));
+
+        function updateNavbar() {
+            const scrollY = window.scrollY;
+            const accueilBottom = accueilSection.offsetHeight;
+            if (scrollY < accueilBottom - navbarHeight) {
+                navbar.classList.remove('white');
+            } else {
+                navbar.classList.add('white');
+            }
+        }
+
+        window.addEventListener('scroll', updateNavbar);
+        window.addEventListener('load', updateNavbar);
+        window.addEventListener('resize', updateNavbar);
+    </script>
+</body>
+</html>
+
