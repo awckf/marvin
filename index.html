@@ -19,66 +19,66 @@
         /* ===================================
            VARIABLES CSS
            =================================== */
-        :root {
-            --main-font: 'Raleway', sans-serif;                                                
-            --color-body-bg: white;					/* MAIN COLOR */
-            --color-body: white;					 					
-           
-            /* Navbar */                   
-            --navbar-height: 70px;
-            --color-navbar-bg: #111111 ; 
-            --color-navbar-link: white;  				/* blanc */
-            --color-navbar-link-style: #047857;			 	/* Vert foncé */
-            --color-bg-burger: #047857;					/* Vert foncé */
-            
-            /* Navbar 2 */    
-              --color-navbar-white-bg: rgba(255, 255, 255, 0.95); 	/* Blanc */                       
-              --color-navbar-white-link: #111111; 			/* noir */
-              --color-navbar-white-link-hover: #059669 ;		/* Vert foncé */
-              --color-navbar-white-navlink-after:;                             
-              --color-navbar-white-social-icons: black ; 		/* noir */
-              --color-navbar-white-social-icons-hover:#059669 ;		/* Vert foncé */       
-              --color-navbar-white-burger:#111111; 			/* noir */
-                          
-            /* Accueil */
-            --accueil-title-main-font: 'Dancing Script';      
-            --color-title-animation: white; 				/* Blanc */
-            --color-accueil-text: #F0FFF0;
-            --color-accueil-bg-1: white;
-            --color-accueil-bg-2: white;
-            --color-accueil-overlay: ;
-            --color-accueil-text-overlay: ;
-            --color-accueil-title-h2-2: red;				/* Vert pâle blanc */
-            --color-accueil-title-h2: #ECFFF5;				/* Vert pâle blanc */
-            --color-accueil-title-h3: #059669;				/* Vert foncé */
-            --color-accueil-bg-button: #059669;				/* Vert foncé */
-            --color-accueil-button-hover: #047857;
-            --color-accueil-button:#000000; 
-            --color-accueil-bg-img: #111111 ;				/* noir - IF NOT => MAIN COLOR */			
-            
-            /* Section */
-            --color-bg-section-top: #1F2937;				/* Gris anthracite moderne */
-            --color-bg-section-top-bf: ;
-            --color-section-title): #000000;
-            --color-bg-section-bot): #000000;
-            
-            --color-asso-box-bg: #f9f9f9;
-            --color-asso-box-h3: #000000;
-            --color-asso-box-h4: #000000;
-        
-            /* burger */       
-            --color-burger-1: ;
-            --color-burger-2: ;                    
-            --color-bg-mobile-menu: ;
-            --color-bg-mobile-menu-link: ;
-            --color-bg-mobile-menu-link-hover: ;
-            --color-bg-mobile-menu-social: ; 
-            --color-bg-mobile-menu-social-hover: ;
-               
-            /* Footer */
-            --color-footer-1: ;
-                
-        }
+:root {
+    --main-font: 'Raleway', sans-serif;
+
+    /* BODY */
+    --color-body-bg: #0D0F0A;
+    --color-body: #F4F7F2;
+
+    /* NAVBAR */
+    --navbar-height: 70px;
+    --color-navbar-bg: rgba(13,15,10,0.9);
+    --color-navbar-link: #F4F7F2;
+    --color-navbar-link-style: #C0FF72;
+    --color-bg-burger: #C0FF72;
+
+    /* Navbar white (après scroll) */
+    --color-navbar-white-bg: #F4F7F2;
+    --color-navbar-white-link: #111111;
+    --color-navbar-white-link-hover: #2E4D1F;
+    --color-navbar-white-navlink-after: #C0FF72;
+    --color-navbar-white-social-icons: #111111;
+    --color-navbar-white-social-icons-hover: #2E4D1F;
+    --color-navbar-white-burger: #111111;
+
+    /* ACCUEIL */
+    --accueil-title-main-font: 'Dancing Script';      
+    --color-title-animation: #F4F7F2;
+    --color-accueil-title-h1: #F4F7F2;
+    --color-accueil-title-h2: #F4F7F2;
+    --color-accueil-coaching: #C0FF72;
+    --color-accueil-title-h3: #F4F7F2;
+
+
+--color-accueil-bg-button: #141A10;
+--color-accueil-button: #C0FF72;
+--color-accueil-button-hover: #1C2416;
+
+
+    --color-accueil-bg-img: #0D0F0A;
+    --color-accueil-overlay: rgba(0,0,0,0.6);
+
+    /* SECTIONS */
+    --color-bg-section-top: #151A12;
+    --color-section-title: #C0FF72;
+    --color-bg-section-bot: #0D0F0A;
+
+    /* BOXES */
+    --color-asso-box-bg: #151A12;
+    --color-asso-box-h3: #C0FF72;
+    --color-asso-box-h4: #A8B3A0;
+
+    /* MOBILE */
+    --color-bg-mobile-menu: #0D0F0A;
+    --color-bg-mobile-menu-link: #F4F7F2;
+    --color-bg-mobile-menu-link-hover: #C0FF72;
+    --color-bg-mobile-menu-social: #F4F7F2;
+    --color-bg-mobile-menu-social-hover: #C0FF72;
+
+    /* FOOTER */
+    --color-footer-1: #A8B3A0;
+}
 
         /* ===================================
            RESET & BASE
@@ -128,9 +128,11 @@
             }
         }
         
-        .highlight {
-  	color: var(--color-accueil-title-h2-2);
-	}
+        
+        .coaching {
+   		 color: var(--color-accueil-coaching);
+	}	
+
 
         .accueil-title h1,
         .accueil-title h2,
@@ -457,21 +459,25 @@
             font-weight: 500;
             margin-bottom: 2rem;
         }
-        .btn {
-            display: inline-block;
-            background-color: var(--color-accueil-bg-button);
-            color: var(--color-accueil-button);
-            padding: 1rem 2.5rem;
-            font-size: 20px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
-            border-radius: 6px;
-        }
-        .btn:hover {
-            background-color: var(--color-accueil-button-hover);
-        }
+  .btn {
+    display: inline-block;
+    background-color: var(--color-accueil-bg-button);
+    color: var(--color-accueil-button);
+    padding: 1rem 2.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid rgba(192,255,114,0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(192,255,114,0.15);
+}
+
+.btn:hover {
+    background-color: var(--color-accueil-button-hover);
+    box-shadow: 0 0 22px rgba(192,255,114,0.35);
+    transform: translateY(-2px);
+}
 
 
         /* ===================================
@@ -593,6 +599,97 @@
         }
 
 
+/* ===================================
+   SECTION A PROPOS
+   =================================== */
+
+/* Container horizontal par défaut */
+#apropos .boxes-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap; /* empêche le wrap par défaut */
+    justify-content: center;
+}
+
+/* Box gauche et droite */
+#apropos .box-left {
+    flex: 1;
+    max-width: 33%; /* 1/3 */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 250px; /* largeur minimale pour que l'image ne soit pas trop petite */
+}
+
+#apropos .box-right {
+    flex: 2;
+    max-width: 66%; /* 2/3 */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Photo carrée dans la box gauche */
+#apropos .box-left .box-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* carré parfait */
+    min-height: 250px; /* hauteur minimale pour que le carré soit visible */
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+#apropos .box-left .box-image img,
+#apropos .box-right .box-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Texte aligné à gauche et plus petit */
+#apropos .box h3,
+#apropos .box h4 {
+    text-align: left;
+}
+
+#apropos .box h4 {
+    font-size: 14px; 
+    line-height: 1.5;
+}
+
+/* CQP avec puces */
+#apropos .box-left ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+
+#apropos .box-left ul li::before {
+    content: "\f00c"; /* icône check Font Awesome */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: var(--color-asso-box-h3);
+}
+
+/* Responsive : passage en colonne */
+@media (max-width: 768px) {
+    #apropos .boxes-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    #apropos .box-left,
+    #apropos .box-right {
+        max-width: 100%;
+        min-width: auto;
+    }
+    #apropos .box-left .box-image {
+        aspect-ratio: auto; /* reprend proportions naturelles sur mobile */
+        min-height: auto;
+    }
+}
+
         /* ===================================
            RESPONSIVE
            =================================== */
@@ -667,7 +764,7 @@
     <section id="accueil">
         <div class="accueil-overlay">
             <div class="accueil-title">
-                <h2>Marvin <span class="var(--color-accueil-title-h2-2)">Coaching</span></h2>
+                <h2>Marvin <span class="coaching">Coaching</span></h2>
                 <h3>Coach sportif | Fitness | Arts Martiaux</h3>
                 <a href="#accompagnement" class="btn">Mes services</a>
             </div>
@@ -683,9 +780,7 @@
                 <h2 class="section-title">Mes accompagnements</h2>
             </div>
             <div class="section-bottom">
-                <div class="text-content">
-                    <p><B>Texte blabla</p><br><br>
-                </div>
+     
                 <div class="boxes-container">
                     <div class="box">
                      	<div class="box-image"><img src="images/box1.jpeg" alt=""></div>
@@ -711,49 +806,55 @@
         </div>
     </section>
 
-    <!-- A PROPOS -->
-    <section id="apropos">
-        <div class="section-container">
-            <div class="section-top">
-                <img src="images/apropos-title.jpg" alt="">
-                <h2 class="section-title">Votre Coach H2</h2>
-            </div>
-            <div class="section-bottom">
-                <div class="text-content">
-                    <b>Marvin</b><br>
-                    <p>Texte blabla </p><br>
-                    </p><br>
+
+
+<!-- A PROPOS -->
+<section id="apropos">
+    <div class="section-container">
+        <div class="section-top">
+            <img src="images/apropos-title.jpg" alt="">
+            <h2 class="section-title">Un Coach à votre service</h2>
+        </div>
+        <div class="section-bottom">
+            <div class="boxes-container">
+
+                <!-- Box gauche : Marvin -->
+                <div class="box box-left">
+                    <div class="box-image">
+                        <img src="images/box4.png" alt="">
+                    </div>
+                    <h3>Marvin</h3>
+                    <h4>
+                        <i class="fas fa-check"></i> CQP Instructeur Fitness <br>
+                        <i class="fas fa-check"></i> CQP Moniteur d'Arts Martiaux (en cours)
+                    </h4>
                 </div>
+
+                <!-- Box droite : Mon parcours -->
+                <div class="box box-right">
+                    <h3>Mon parcours</h3>
+                    <h4>
+                        Passionné d’arts martiaux depuis l’enfance, j’ai toujours cultivé la discipline, la persévérance et le dépassement de soi.<br><br>
+                        Aujourd’hui, je mets cette énergie au service des autres en tant que coach sportif. Mon objectif est simple : vous accompagner avec engagement, bienveillance et exigence pour révéler votre plein potentiel. Chaque personne est unique, chaque progression mérite d’être construite sur mesure.
+                    </h4>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-links-container">
-            <div class="footer-links">
-                <h3>Liens</h3>
-                <a href="" target="_blank">exemple</a>
-                <a href="" target="_blank">exemple</a>
-                <a href="" target="_blank">exemple</a>
-            </div>
-            <div class="footer-links">
-                <h3>Partenaires</h3>
-                <a href="" target="_blank">exemple</a>
-                <a href="" target="_blank">exemple</a>
-                <a href="" target="_blank">exemple</a>
-            </div>
-            <div class="footer-links">
-                <h3>Contact</h3>
-                <a href="">mail@example.me</a>
-                <div class="footer-social-links"><b>Suivez nous :</b>
+              <div class="footer-links">
+                  <div class="footer-social-links"><b>Suivez moi :</b>
                     <a href="https://facebook.com/Marvin.coaching.37" target="_blank"><i class="fab fa-facebook"></i></a>
                     <a href="https://instagram.com/marvin.coaching.37" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:marin.coaching@outlook.com"><i class="fas fa-envelope"></i></a>
                 </div>
-            </div>
-            <div class="footer-links">
-                <div class="footer-logo"><img src="images/logo.png" alt="Logo"></div>
             </div>
         </div>
         <p>© 2026 MARVIN COACHING - TOUS DROITS RÉSERVÉS.</p>
@@ -819,4 +920,3 @@
     </script>
 </body>
 </html>
-
