@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
     <style>
         /* ===================================
@@ -44,13 +40,13 @@
 
     /* ACCUEIL */
     --accueil-title-main-font: 'Dancing Script';      
-    --color-title-animation: #F4F7F2;
-    --color-accueil-title-h1: #F4F7F2;
-    --color-accueil-title-h2: #F4F7F2;
-    --color-accueil-coaching: #C0FF72;
-    --color-accueil-title-h3: #F4F7F2;
+    --color-title-animation: #C0FF72;			/* vert fluo */
+    --color-accueil-title-h1: #F4F7F2;			/* blanc teinté vert */
+    --color-accueil-title-h2: #F4F7F2;			/* blanc teinté vert */
+    --color-accueil-coaching: #C0FF72;			/* vert fluo */
+    --color-accueil-title-h3: #F4F7F2;			/* blanc teinté vert */
     --color-accueil-bg-button: #141A10;
-    --color-accueil-button: #C0FF72;
+    --color-accueil-button: #C0FF72;			/* vert fluo */
     --color-accueil-button-hover: #1C2416;
 
     --color-accueil-bg-img: #0D0F0A;
@@ -105,11 +101,26 @@
             max-width: 100%;
             display: block;
         }
+        
+  .btn {
+    display: inline-block;
+    background-color: var(--color-accueil-bg-button);
+    color: var(--color-accueil-button);
+    padding: 1rem 2.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid rgba(192,255,114,0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(192,255,114,0.15);
+}
 
-
-
-
-
+.btn:hover {
+    background-color: var(--color-accueil-button-hover);
+    box-shadow: 0 0 22px rgba(192,255,114,0.35);
+    transform: translateY(-2px);
+}
 
         /* ===================================
            ANIMATION D'APPARITION PROGRESSIVE (ACCUEIL)
@@ -124,44 +135,40 @@
                 transform: translateY(0);
             }
         }
-        
-        
+         
         .coaching {
    		 color: var(--color-accueil-coaching);
 	}	
 
+.accueil-title h1,
+.accueil-title h2,
+.accueil-title h3,
+.accueil-title .btn {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    color: var(--color-title-animation);
+    animation-delay: 1.5s;
+    margin-top: 1.5rem; /* espace au-dessus du H3 */
+}
 
-        .accueil-title h1,
-        .accueil-title h2,
-        .accueil-title h3,
-        .accueil-title .btn {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-            color: var(--color-title-animation);
-        }
-        .accueil-title h1 {          
-         font-family: var(--accueil-title-main-font);
-    	 font-size: clamp(3.8rem, 10vw, 7rem);
-    	 color: var(--color-accueil-title-h1);
-    	 line-height: 1.1;
-    	 animation-delay: 0.3s;
-    	 }
-        .accueil-title h2 {
-         font-family: var(--accueil-title-main-font);
-    	 font-size: clamp(3.8rem, 10vw, 7rem);
-    	 color: var(--color-accueil-title-h2);
-    	 line-height: 1.1;
-    	 animation-delay: 0.3s;
-	}
-        .accueil-title h3 {
-         font-family: var(--main-font);
-         color: var(--color-accueil-title-h3);
-    	 font-size: clamp(3.5rem, 10vw, 7rem);
-    	 line-height: 1.1;
-    	 animation-delay: 0.6s;
-	}
-	
-        .accueil-title .btn { animation-delay: 1.5s; }
+.accueil-title h2 {
+    font-family: var(--accueil-title-main-font);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    color: var(--color-accueil-title-h2);
+    line-height: 1.1;
+    animation-delay: 0.3s;
+    margin-bottom: 0.6rem; /* espace sous le H2 */
+}
+
+.accueil-title h3 {
+    font-family: var(--main-font);
+    color: var(--color-accueil-title-h3);
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    line-height: 1.1;
+    animation-delay: 0.6s;
+    margin-top: 0.2rem; /* espace au-dessus du H3 */
+}
+
 
 
         /* ===================================
@@ -419,7 +426,7 @@
         #accueil {
             height: 100vh;
             position: relative;
-            background: var(--color-accueil-bg-img) url('images/') center/cover no-repeat;
+            background: var(--color-accueil-bg-img) /*url('images/') center/cover no-repeat;*/
         }
         .accueil-overlay {
             position: absolute;
@@ -437,44 +444,6 @@
             padding: 0 5%;
             z-index: 1;
         }
-        .accueil-title h1 {
-            font-size: 35px;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        .accueil-title h2 {
-            font-size: 65px;
-            font-weight: 700;
-            margin: 0.5rem 0;
-        }
-        .accueil-title h2 .red-text {
-            color: var(--color-accueil-title);
-            font-weight: 700;
-        }
-        .accueil-title h3 {
-            font-size: 35px;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-  .btn {
-    display: inline-block;
-    background-color: var(--color-accueil-bg-button);
-    color: var(--color-accueil-button);
-    padding: 1rem 2.5rem;
-    font-size: 20px;
-    font-weight: 600;
-    border: 1px solid rgba(192,255,114,0.4);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 6px;
-    box-shadow: 0 0 12px rgba(192,255,114,0.15);
-}
-
-.btn:hover {
-    background-color: var(--color-accueil-button-hover);
-    box-shadow: 0 0 22px rgba(192,255,114,0.35);
-    transform: translateY(-2px);
-}
 
 
         /* ===================================
@@ -643,12 +612,24 @@
     display: block;
 }
 
-/* Texte aligné à gauche et plus petit */
+/* Titres */
 #apropos .box h3,
 #apropos .box h4 {
     text-align: left;
 }
 
+/* Texte du parcours */
+#apropos .box-right p {
+    text-align: justify;
+    line-height: 1.6;
+}
+/* Texte Marvin */
+#apropos .box-left p {
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* Sous-titres */
 #apropos .box h4 {
     font-size: 14px; 
     line-height: 1.5;
@@ -670,58 +651,125 @@
     color: var(--color-asso-box-h3);
 }
 
-/* Responsive : passage en colonne */
-@media (max-width: 768px) {
-    #apropos .boxes-container {
-        flex-direction: column;
-        gap: 1.5rem;
+
+/* ===================================
+   RESPONSIVE GÉNÉRAL OPTIMISÉ
+   =================================== */
+
+/* Tablette / medium screens : 992px et moins */
+@media (max-width: 992px) {
+    /* NAVBAR */
+    .nav-links, .social-icons { display: none; }
+    .burger { display: flex !important; margin-left: auto; }
+    .navbar { justify-content: flex-end; }
+    section { padding-top: calc(var(--navbar-height) + 10px); }
+
+    /* ACCUEIL HERO */
+    .accueil-title h1 {
+        font-size: clamp(2.2rem, 5vw, 3.2rem);
+        margin-bottom: 0.6rem;
     }
+    .accueil-title h2 {
+        font-size: clamp(3.5rem, 7vw, 5rem);
+        margin-top: 0.8rem;
+        margin-bottom: 0.6rem;
+    }
+    .accueil-title h3 {
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .accueil-title .btn {
+        margin-top: 1.2rem;
+        padding: 0.9rem 2.2rem;
+        font-size: 17px;
+    }
+
+    /* SECTIONS */
+    .section-title { font-size: 50px; }
+    .text-content { font-size: 18px; }
+}
+
+/* Tablette / small screens : 768px et moins */
+@media (max-width: 768px) {
+    .section-top { height: 25vh !important; min-height: 140px; }
+    .section-bottom { padding: 2rem 5%; }
+
+    /* ACCUEIL HERO */
+    .accueil-title h1 {
+        font-size: clamp(2.4rem, 5.5vw, 3rem);
+        margin-bottom: 0.5rem;
+    }
+    .accueil-title h2 {
+        font-size: clamp(3.8rem, 8vw, 4.8rem);
+        margin-top: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+    .accueil-title h3 {
+        font-size: clamp(1.5rem, 4vw, 1.8rem);
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .accueil-title .btn {
+        margin-top: 1.2rem;
+        padding: 0.85rem 2rem;
+        font-size: 16px;
+    }
+
+    /* BOXES */
+    .boxes-container { flex-direction: column; align-items: center; gap: 2rem; }
+    .box { max-width: 90%; padding: 2rem 1.5rem; }
+}
+
+/* Petit mobile : 480px et moins */
+@media (max-width: 480px) {
+    .section-title { font-size: 34px; }
+
+    /* ACCUEIL HERO */
+    .accueil-title h1 {
+        font-size: clamp(2rem, 5vw, 2.6rem);
+        margin-bottom: 0.4rem;
+    }
+    .accueil-title h2 {
+        font-size: clamp(3rem, 7vw, 3.8rem);
+        margin-top: 0.6rem;
+        margin-bottom: 0.4rem;
+    }
+    .accueil-title h3 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem); 
+        margin-top: 0.4rem;
+        margin-bottom: 0.8rem;
+    }
+    .accueil-title .btn {
+        margin-top: 1rem;
+        padding: 0.7rem 1.8rem;
+        font-size: 15px;
+    }
+
+    /* BOXES */
+    .box { padding: 1.6rem 1.2rem; }
+
+    /* TEXTES */
+    .text-content { font-size: 16px; }
+}
+
+/* A PROPOS - responsive */
+@media (max-width: 768px) {
+    #apropos .boxes-container { flex-direction: column; gap: 1.5rem; }
     #apropos .box-left,
     #apropos .box-right {
         max-width: 100%;
         min-width: auto;
     }
-    #apropos .box-left .box-image {
-        aspect-ratio: auto; /* reprend proportions naturelles sur mobile */
-        min-height: auto;
-    }
+    #apropos .box-left .box-image { aspect-ratio: auto; min-height: auto; }
 }
-
-        /* ===================================
-           RESPONSIVE
-           =================================== */
-        @media (max-width: 992px) {
-            .nav-links, .social-icons { display: none; }
-            .burger { 
-                display: flex !important; 
-                margin-left: auto; 
-            }
-            .navbar { justify-content: center-end; }
-            section { padding-top: calc(var(--navbar-height) + 10px); }
-            .section-title { font-size: 48px; }
-            .accueil-title h1, .accueil-title h3 { font-size: 28px; }
-            .accueil-title h2 { font-size: 48px; }
-            .text-content { font-size: 18px; }
-        }
-        @media (max-width: 768px) {
-            .section-top { height: 20vh !important; min-height: 120px; }
-            .section-bottom { padding: 2rem 5%; }
-            .section-title { font-size: 36px; }
-            .accueil-title h1, .accueil-title h3 { font-size: 28px; }
-            .accueil-title h2 { font-size: 36px; }
-            .btn { padding: 0.8rem 2rem; font-size: 18px; }
-            .boxes-container { flex-direction: column; align-items: center; gap: 2rem; }
-            .box { max-width: 90%; padding: 2rem 1.5rem; }
-        }
-        @media (max-width: 480px) {
-            .section-title { font-size: 34px; }
-            .accueil-title h1, .accueil-title h3 { font-size: 28px; }
-            .accueil-title h2 { font-size: 36px; }
-            .text-content { font-size: 16px; }
-            .box { padding: 1.8rem 1.2rem; }
-        }
-    </style>
+   </style>
 </head>
+
+
+/* ===================================
+   BODY !!!!!!!!!!!!!!!!!!!!!
+   =================================== */   
 <body>
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
@@ -734,6 +782,7 @@
             <div class="social-icons">
                 <a href="https://facebook.com/Marvin.coaching.37" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://instagram.com/marvin.coaching.37" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:marin.coaching@outlook.com"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
         <div class="burger" id="burger">
@@ -753,6 +802,7 @@
         <div class="social-icons">
             <a href="https://facebook.com/Marvin.coaching.37" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://instagram.com/marvin.coaching.37" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:marin.coaching@outlook.com"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 
@@ -782,19 +832,19 @@
                     <div class="box">
                      	<div class="box-image"><img src="images/box1.jpeg" alt=""></div>
                         <h3>Programme Personnalisé</h3>
-                        <h4> - A votre écoute, personne unique = programme unique blabla H4</h4>
+                        <h4> (A votre écoute, personne unique = programme unique...)</h4>
                         <div><a href="" target="_blank" class="btn">En savoir plus</a></div>
                     </div>
                     <div class="box">
                     	<div class="box-image"><img src="images/box2.jpeg" alt=""></div>
                         <h3>Remise en forme</h3>
-                        <h4> - prise de masse, remise en forme, rééducation blabla H4 </h4><br>
+                        <h4> (prise de masse, remise en forme, rééducation ...)</h4><br>
                         <div><a href="" target="_blank" class="btn">En savoir plus</a></div>
                     </div>
                     <div class="box">
                         <div class="box-image"><img src="images/box3.jpeg" alt=""></div>
                         <h3>Self Defense</h3>
-                        <h4>Confiance en soi, défense, arts Martiaux blabla H4</h4><br>
+                        <h4>(Confiance en soi, self-défense, Arts Martiaux...)</h4><br>
                         <div><a href="" target="_blank" class="btn">En savoir plus</a></div>
 
                     </div>
@@ -821,26 +871,29 @@
                         <img src="images/box4.png" alt="">
                     </div>
                     <h3>Marvin</h3>
-                    <h4>
+		    <div><p>
                         <i class="fas fa-check"></i> CQP Instructeur Fitness <br>
-                        <i class="fas fa-check"></i> CQP Moniteur d'Arts Martiaux (en cours)
-                    </h4>
+                        <i class="fas fa-check"></i> CQP Moniteur d'Arts Martiaux (en cours)</p>
+                    </div>
                 </div>
 
                 <!-- Box droite : Mon parcours -->
                 <div class="box box-right">
                     <h3>Mon parcours</h3>
-                    <h4>
-                        Passionné d’arts martiaux depuis l’enfance, j’ai toujours cultivé la discipline, la persévérance et le dépassement de soi.<br><br>
-                        Aujourd’hui, je mets cette énergie au service des autres en tant que coach sportif. Mon objectif est simple : vous accompagner avec engagement, bienveillance et exigence pour révéler votre plein potentiel. Chaque personne est unique, chaque progression mérite d’être construite sur mesure.
-                    </h4>
+                    <div>
+                        <p>Passionné d’arts martiaux depuis l’enfance, j’ai débuté par l’Aïkido. Souhaitant développer un travail plus orienté pieds-poings, je me suis ensuite tourné vers le Karaté Kyokushinkai. Un changement de région m’a finalement conduit à trouver mon axe principal : la self-défense, et plus particulièrement le Jeet Kune Do (fondateur : Bruce Lee), que je pratique depuis plus de quinze ans.</p><br>
+
+<p>Au fil des rencontres et de ma recherche d’évolution martiale, j’ai intégré le cursus M.A.R.S. (Martial Arts Research Systems) de Ron Balicki, représentant international du JKD basé aux États-Unis et formé par Dan Inosanto, proche collaborateur de Bruce Lee. Dans ce programme, je suis actuellement certifié niveau intermédiaire 3, avec pour objectif de devenir apprenti instructeur.</p><br>
+
+<p>Toujours animé par la discipline, la persévérance et le dépassement de soi, je continue d’enrichir ma pratique à travers différents stages et disciplines complémentaires comme le Wing Chun, le Kali, le Panuntukan et la self-défense.</p><br>
+
+<p>Ce parcours martial a également éveillé chez moi un intérêt pour les mécanismes du corps humain, me conduisant à obtenir un diplôme de coach sportif. Aujourd’hui, je mets cette énergie au service des autres afin de les accompagner avec engagement, bienveillance et exigence pour révéler leur plein potentiel.</p><br>                   
                 </div>
 
             </div>
         </div>
     </div>
 </section>
-
 
 
     <!-- FOOTER -->
