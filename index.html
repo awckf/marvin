@@ -658,100 +658,116 @@
 
 /* Tablette / medium screens : 992px et moins */
 @media (max-width: 992px) {
-    /* HERO */
-    .accueil-title h2 {
-        font-size: clamp(4rem, 8.5vw, 5.5rem); /* un peu plus gros */
-        margin-top: 0.8rem;
+    /* NAVBAR */
+    .nav-links, .social-icons { display: none; }
+    .burger { display: flex !important; margin-left: auto; }
+    .navbar { justify-content: flex-end; }
+    section { padding-top: calc(var(--navbar-height) + 10px); }
+
+    /* ACCUEIL HERO */
+    .accueil-title h1 {
+        font-size: clamp(2.2rem, 5vw, 3.2rem);
         margin-bottom: 0.6rem;
     }
+    .accueil-title h2 {
+        font-size: clamp(4rem, 8vw, 5.5rem);  /* plus gros */
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
     .accueil-title h3 {
-        font-size: clamp(1.3rem, 3vw, 1.6rem); /* réduit */
-        margin-top: 0.5rem;
+        font-size: clamp(1.8rem, 4vw, 2.2rem); /* plus gros */
+        margin-top: 0.6rem;
         margin-bottom: 1rem;
     }
     .accueil-title .btn {
-        margin-top: 1rem;
-        padding: 0.8rem 2rem;
-        font-size: 16px;
+        margin-top: 1.5rem;
+        padding: 1rem 2.5rem; /* identique aux autres boutons */
+        font-size: 18px;
     }
 
     /* SECTIONS */
-    .section-title { font-size: 48px; }
+    .section-title { font-size: 50px; }
     .text-content { font-size: 18px; }
-
-    /* BOXES H3 */
-    #apropos .box-left h3,
-    #apropos .box-right h3 {
-        font-size: 28px;
-    }
 }
 
 /* Tablette / small screens : 768px et moins */
 @media (max-width: 768px) {
-    /* HERO */
-    .accueil-title h2 {
-        font-size: clamp(3.8rem, 8vw, 4.8rem);
-        margin-top: 0.8rem;
+    .section-top { height: 25vh !important; min-height: 140px; }
+    .section-bottom { padding: 2rem 5%; }
+
+    /* ACCUEIL HERO */
+    .accueil-title h1 {
+        font-size: clamp(2.4rem, 5.5vw, 3rem);
         margin-bottom: 0.5rem;
     }
+    .accueil-title h2 {
+        font-size: clamp(4.2rem, 8.5vw, 5rem); /* plus gros */
+        margin-top: 0.8rem;
+        margin-bottom: 0.6rem;
+    }
     .accueil-title h3 {
-        font-size: clamp(1.2rem, 3vw, 1.4rem); /* réduit */
-        margin-top: 0.5rem;
+        font-size: clamp(2rem, 5vw, 2.3rem); /* plus gros */
+        margin-top: 0.6rem;
         margin-bottom: 1rem;
     }
     .accueil-title .btn {
-        margin-top: 0.8rem;
-        padding: 0.7rem 1.8rem;
-        font-size: 15px;
+        margin-top: 1.5rem;
+        padding: 1rem 2.5rem; /* identique aux autres boutons */
+        font-size: 18px;
     }
 
-    /* SECTIONS */
-    .section-top { height: 20vh !important; min-height: 120px; }
-    .section-bottom { padding: 2rem 5%; }
-    .section-title { font-size: 36px; }
-
-    /* BOXES H3 */
-    #apropos .box-left h3,
-    #apropos .box-right h3 {
-        font-size: 22px;
-    }
-
-    /* BOXES layout */
+    /* BOXES */
     .boxes-container { flex-direction: column; align-items: center; gap: 2rem; }
     .box { max-width: 90%; padding: 2rem 1.5rem; }
 }
 
 /* Petit mobile : 480px et moins */
 @media (max-width: 480px) {
-    /* HERO */
-    .accueil-title h2 {
-        font-size: clamp(3rem, 7vw, 4rem);
-        margin-top: 0.6rem;
+    .section-title { font-size: 34px; }
+
+    /* ACCUEIL HERO */
+    .accueil-title h1 {
+        font-size: clamp(2rem, 5vw, 2.6rem);
         margin-bottom: 0.4rem;
     }
+    .accueil-title h2 {
+        font-size: clamp(3.5rem, 7vw, 4.5rem); /* plus gros */
+        margin-top: 0.6rem;
+        margin-bottom: 0.5rem;
+    }
     .accueil-title h3 {
-        font-size: clamp(1rem, 3vw, 1.2rem); /* réduit */
-        margin-top: 0.4rem;
+        font-size: clamp(1.6rem, 4vw, 2rem); /* plus gros */
+        margin-top: 0.5rem;
         margin-bottom: 0.8rem;
     }
     .accueil-title .btn {
-        margin-top: 0.6rem;
-        padding: 0.6rem 1.5rem;
-        font-size: 14px;
+        margin-top: 1.5rem;
+        padding: 1rem 2.5rem; /* identique aux autres boutons */
+        font-size: 18px;
     }
 
-    /* SECTIONS */
-    .section-title { font-size: 34px; }
-    .text-content { font-size: 16px; }
+    /* BOXES */
+    .box { padding: 1.6rem 1.2rem; }
 
-    /* BOXES H3 */
+    /* TEXTES */
+    .text-content { font-size: 16px; }
+}
+
+/* A PROPOS - responsive */
+@media (max-width: 768px) {
+    #apropos .boxes-container { flex-direction: column; gap: 1.5rem; }
+    #apropos .box-left,
+    #apropos .box-right {
+        max-width: 100%;
+        min-width: auto;
+    }
+    #apropos .box-left .box-image { aspect-ratio: auto; min-height: auto; }
+
+    /* H3 dans box-left et box-right plus petit */
     #apropos .box-left h3,
     #apropos .box-right h3 {
-        font-size: 20px;
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
     }
-
-    /* BOXES layout */
-    .box { padding: 1.6rem 1.2rem; }
 }
    </style>
 </head>
