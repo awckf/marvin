@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -12,7 +12,7 @@
 
 <!-- Manifest -->
 <link rel="manifest" href="/site.webmanifest">
-	
+    
 <!-- SEO principal -->
 <title>Coach sportif Tours – Coaching sportif à domicile | Marvin Coaching</title>
 <meta name="description" content="Coach sportif à Tours : coaching personnalisé à domicile, remise en forme, perte de poids et préparation physique. Séances adaptées à tous les niveaux en Indre-et-Loire avec Marvin Coaching.">
@@ -70,6 +70,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+
+
+
+
         /* ===================================
            VARIABLES CSS
            =================================== */
@@ -454,6 +458,21 @@
             margin: 0;
             text-shadow: 0 2px 10px rgba(0,0,0,0.7);
         }
+        /* H1 : titre principal */
+	.section-title h1 {
+    	   font-size: clamp(40px, 6vw, 65px); /* desktop + responsive */
+	   line-height: 1.2;
+	   margin-bottom: 0.5rem;
+	}
+
+	/* H2 : sous-titre */
+	.section-title h2 {
+	    font-size: clamp(28px, 4.5vw, 36px);
+    	    font-weight: 500;
+    	    line-height: 1.3;
+    	    margin-top: 0.5rem;
+	}
+
         .section-bottom {
             flex: 1;
             background-color: var(--color-bg-section-bot);
@@ -740,6 +759,8 @@
     line-height: 1.5;
 }
 
+
+
 /* ===================================
    RESPONSIVE GÉNÉRAL OPTIMISÉ
    =================================== */
@@ -758,24 +779,38 @@
         margin-bottom: 0.6rem;
     }
     .accueil-title h2 {
-        font-size: clamp(4rem, 8vw, 5.5rem);  /* plus gros */
+        font-size: clamp(4rem, 8vw, 5.5rem);
         margin-top: 0.8rem;
         margin-bottom: 0.8rem;
     }
     .accueil-title h3 {
-        font-size: clamp(1.8rem, 4vw, 2.2rem); /* plus gros */
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
         margin-top: 0.6rem;
         margin-bottom: 1rem;
     }
     .accueil-title .btn {
         margin-top: 1.5rem;
-        padding: 1rem 2.5rem; /* identique aux autres boutons */
+        padding: 1rem 2.5rem;
         font-size: 18px;
     }
 
     /* SECTIONS */
     .section-title { font-size: 50px; }
     .text-content { font-size: 18px; }
+
+    /* SECTION TITLE */
+    .section-title {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+    .section-title h1 { font-size: clamp(32px, 5vw, 50px); margin-bottom: 0.5rem; }
+    .section-title h2 { font-size: clamp(22px, 4vw, 32px); }
+
+    /* BOXES */
+    .boxes-container .btn { font-size: 1rem; } /* Ajusté par rapport au H3 */
 }
 
 /* Tablette / small screens : 768px et moins */
@@ -784,78 +819,67 @@
     .section-bottom { padding: 2rem 5%; }
 
     /* ACCUEIL HERO */
-    .accueil-title h1 {
-        font-size: clamp(2.4rem, 5.5vw, 3rem);
-        margin-bottom: 0.5rem;
-    }
-    .accueil-title h2 {
-        font-size: clamp(4.2rem, 8.5vw, 5rem); /* plus gros */
-        margin-top: 0.8rem;
-        margin-bottom: 0.6rem;
-    }
-    .accueil-title h3 {
-        font-size: clamp(2rem, 5vw, 2.3rem); /* plus gros */
-        margin-top: 0.6rem;
-        margin-bottom: 1rem;
-    }
-    .accueil-title .btn {
-        margin-top: 1.5rem;
-        padding: 1rem 2.5rem; /* identique aux autres boutons */
-        font-size: 18px;
-    }
+    .accueil-title h1 { font-size: clamp(2.4rem, 5.5vw, 3rem); margin-bottom: 0.5rem; }
+    .accueil-title h2 { font-size: clamp(4.2rem, 8.5vw, 5rem); margin-top: 0.8rem; margin-bottom: 0.6rem; }
+    .accueil-title h3 { font-size: clamp(2rem, 5vw, 2.3rem); margin-top: 0.6rem; margin-bottom: 1rem; }
+    .accueil-title .btn { margin-top: 1.5rem; padding: 1rem 2.5rem; font-size: 18px; }
 
     /* BOXES */
     .boxes-container { flex-direction: column; align-items: center; gap: 2rem; }
     .box { max-width: 90%; padding: 2rem 1.5rem; }
-}
 
-/* Petit mobile : 480px et moins */
-@media (max-width: 480px) {
-    .section-title { font-size: 34px; }
+    /* SECTION TITLE */
+    .section-title h1 { font-size: clamp(28px, 5vw, 40px); margin-bottom: 0.4rem; }
+    .section-title h2 { font-size: clamp(20px, 4vw, 28px); }
 
-    /* ACCUEIL HERO */
-    .accueil-title h1 {
-        font-size: clamp(2rem, 5vw, 2.6rem);
-        margin-bottom: 0.4rem;
-    }
-    .accueil-title h2 {
-        font-size: clamp(3.5rem, 7vw, 4.5rem); /* plus gros */
-        margin-top: 0.6rem;
-        margin-bottom: 0.5rem;
-    }
-    .accueil-title h3 {
-        font-size: clamp(1.6rem, 4vw, 2rem); /* plus gros */
-        margin-top: 0.5rem;
-        margin-bottom: 0.8rem;
-    }
-    .accueil-title .btn {
-        margin-top: 1.5rem;
-        padding: 1rem 2.5rem; /* identique aux autres boutons */
-        font-size: 18px;
-    }
+    /* BOXES - boutons */
+    .boxes-container .btn { font-size: 0.95rem; }
 
-    /* BOXES */
-    .box { padding: 1.6rem 1.2rem; }
-
-    /* TEXTES */
-    .text-content { font-size: 16px; }
-}
-
-/* A PROPOS - responsive */
-@media (max-width: 768px) {
+    /* A PROPOS - responsive */
     #apropos .boxes-container { flex-direction: column; gap: 1.5rem; }
     #apropos .box-left,
-    #apropos .box-right {
-        max-width: 100%;
-        min-width: auto;
-    }
+    #apropos .box-right { max-width: 100%; min-width: auto; }
     #apropos .box-left .box-image { aspect-ratio: auto; min-height: auto; }
 
     /* H3 dans box-left et box-right plus petit */
     #apropos .box-left h3,
-    #apropos .box-right h3 {
-        font-size: clamp(1.2rem, 3vw, 1.5rem);
+    #apropos .box-right h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
+}
+
+/* Petit mobile : 480px et moins */
+@media (max-width: 480px) {
+    /* SECTION TITLE */
+    .section-title {
+        width: 90%;            /* limiter la largeur pour laisser respirer */
+        padding: 0 1rem;       /* padding horizontal */
+        box-sizing: border-box;
     }
+    .section-title h1 { 
+        font-size: clamp(26px, 6vw, 36px); 
+        margin-bottom: 0.4rem; 
+    }
+    .section-title h2 { 
+        font-size: clamp(22px, 4.5vw, 30px); 
+    }
+
+    /* ACCUEIL HERO */
+    .accueil-title {
+        width: 90%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+    .accueil-title h1 { font-size: clamp(2.4rem, 5vw, 2.9rem); margin-bottom: 0.4rem; }
+    .accueil-title h2 { font-size: clamp(3.2rem, 6vw, 4.2rem); margin-bottom: 0.4rem; }
+    .accueil-title h3 { font-size: clamp(1.8rem, 4vw, 2.1rem); margin-bottom: 0.6rem; }
+
+    /* BOXES */
+    .boxes-container { width: 100%; }
+    .boxes-container .box { padding: 1.6rem 1rem; }
+    .boxes-container .box h3 { font-size: clamp(20px, 3vw, 22px); margin-bottom: 0.4rem; }
+    .boxes-container .btn { font-size: 0.95rem; padding: 0.9rem 1.8rem; }
+
+    /* TEXTES */
+    .text-content { font-size: 16px; }
 }
    </style>
 </head>
@@ -917,10 +941,13 @@
         <div class="section-container">
             <div class="section-top">
                 <img src="images/top1.png" alt="">
-                <h2 class="section-title">Mes accompagnements</h2>
+                <div class="section-title">
+    			<h1>Programmes adaptés</h1>
+    			<h2>Perte de poids, renforcement musculaire et bien-être à Tours</h2>
+		</div>
             </div>
-            <div class="section-bottom">
-     
+            
+            <div class="section-bottom">   
                 <div class="boxes-container">
                     <div class="box">
                      	<div class="box-image"><img src="images/box1.jpeg" alt=""></div>
@@ -967,7 +994,10 @@
     <div class="section-container">
         <div class="section-top">
             <img src="images/top1.png" alt="">
-            <h2 class="section-title">Un Coach à votre service</h2>
+                <div class="section-title">
+    			<h1>Votre coach sportif à Tours</h1>
+    			<h2>Coaching personnalisé, fitness et self-défense pour tous niveaux</h2>
+		</div>
         </div>
         <div class="section-bottom">
             <div class="boxes-container">
@@ -991,8 +1021,11 @@
                     <h3>Mon parcours</h3>
                     <div>
                         <p>Coach Sportif certifié, je suis également spécialisé en self-défense et Jeet Kune Do. Depuis quelques mois, j’accompagne mes clients dans le cadre de programmes individuels, de séances de fitness et de remise en forme, et cette expérience est particulièrement stimulante. Je propose des cours adaptés aux objectifs et au niveau de chacun.</p><br>
-<p>Avec sept années d’expérience dans l’enseignement en association, je combine ma pratique des arts martiaux et mes compétences en fitness pour créer des séances efficaces, motivantes et sécurisées.</p><br>
+
+<p>Avec 5 ans d’expérience dans l’enseignement en association, je combine ma pratique des arts martiaux et mes compétences en fitness pour créer des séances efficaces, motivantes et sécurisées.</p><br>
+
 <p>Impliqué dans la vie associative, je m’engage pleinement auprès de mes élèves et clients qui m’ont fait confiance pour un suivi fiable et professionnel. Mon approche combine renforcement physique, mobilité, self-défense et bien-être, pour permettre à chacun de progresser efficacement et durablement.</p><br>
+
 <p>Mon objectif : vous aider à atteindre vos objectifs sportifs tout en développant confiance, plaisir et motivation dans un environnement sûr et dynamique.</p><br>
 
             </div>
