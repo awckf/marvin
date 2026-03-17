@@ -110,9 +110,10 @@
     --color-accueil-bg-button: #141A10;
     --color-accueil-button: #C0FF72;			/* vert fluo */
     --color-accueil-button-hover: #1C2416;
-
     --color-accueil-bg-img: #0D0F0A;
-    --color-accueil-overlay: rgba(0,0,0,0.6);
+    --color-accueil-overlay: 
+	linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)),
+	linear-gradient(rgba(0, 200, 100, 0.10), rgba(0, 200, 100, 0.05));
 
     /* SECTIONS */
     --color-bg-section-top: #151A12;
@@ -503,7 +504,7 @@
         #accueil {
             height: 100vh;
             position: relative;
-            background: var(--color-accueil-bg-img) /*url('images/') center/cover no-repeat;*/
+            background: var(--color-accueil-bg-img) url('images/hero01.jpg') center/cover no-repeat;
         }
         .accueil-overlay {
             position: absolute;
@@ -778,11 +779,11 @@
         font-size: clamp(2.2rem, 5vw, 3.2rem);
         margin-bottom: 0.6rem;
     }
-    .accueil-title h2 {
-        font-size: clamp(4rem, 8vw, 5.5rem);
-        margin-top: 0.8rem;
-        margin-bottom: 0.8rem;
-    }
+ .accueil-title h2 { 
+    font-size: clamp(2.3rem, 6vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
     .accueil-title h3 {
         font-size: clamp(1.8rem, 4vw, 2.2rem);
         margin-top: 0.6rem;
@@ -950,7 +951,7 @@
             <div class="section-bottom">   
                 <div class="boxes-container">
                     <div class="box">
-                     	<div class="box-image"><img src="images/box1.jpeg" alt=""></div>
+                     	<div class="box-image"><img src="images/box1.jpg" alt=""></div>
                         <h3>Programme Personnalisé</h3>
                         <ul class="service-list">
          		 <li>Programme adapté à vos objectifs</li>
@@ -1046,7 +1047,6 @@
         </div>
         <p>© 2026 MARVIN COACHING - TOUS DROITS RÉSERVÉS.</p>
     </footer>
-
 
     <script>
         // === MENU MOBILE ===
